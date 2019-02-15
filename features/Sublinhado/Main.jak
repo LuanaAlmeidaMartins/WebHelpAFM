@@ -1,0 +1,9 @@
+
+public refines class Main {
+
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+		SimpleButton botao = new SimpleButton("Sublinhado");
+		botao.action();
+	}
+}

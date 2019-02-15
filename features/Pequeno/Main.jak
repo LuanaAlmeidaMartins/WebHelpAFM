@@ -1,0 +1,31 @@
+/**
+ * TODO description
+ */
+public refines class Main {
+	
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+		
+		if(caracteres!=null) {
+			caracteres.opcao("Pequeno");
+			caracteres.actionButton() ;
+		}
+		if(paragrafos!=null) {
+			paragrafos.opcao("Pequeno");
+			paragrafos.actionButton() ;
+		}
+		if(linhas!=null) {
+			linhas.opcao("Pequeno");
+			linhas.actionButton() ;
+		}
+		if(fonteSize!=null) {
+			fonteSize.opcao("Pequeno");
+			fonteSize.actionButton() ;
+		}
+		if(regua!=null) {
+			regua.opcao("Pequeno");
+			regua.actionButton() ;
+		}
+	}
+
+}

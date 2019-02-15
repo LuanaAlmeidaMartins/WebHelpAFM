@@ -1,0 +1,8 @@
+
+public refines class Main {
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+		SimpleButton botao = new SimpleButton("Negrito");
+		botao.action();
+	}
+}

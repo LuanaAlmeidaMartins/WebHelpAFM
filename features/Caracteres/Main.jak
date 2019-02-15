@@ -1,0 +1,8 @@
+
+public refines class Main {
+	
+	public void createWebHelpBar() {
+		caracteres = new SizeButton("Caracteres");
+		Super().createWebHelpBar() ;
+	}
+}

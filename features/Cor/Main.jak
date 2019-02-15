@@ -1,0 +1,22 @@
+
+public refines class Main {
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+		
+		if(background!=null) {
+			background.actionButton();
+		}
+		
+		if(fonteColor!=null) {
+			
+			fonteColor.actionButton();
+		}
+		if(highlight!=null) {
+			highlight.actionButton();
+		}
+		if(overlay!=null) {
+			overlay.actionButton();
+		}
+	}
+
+}

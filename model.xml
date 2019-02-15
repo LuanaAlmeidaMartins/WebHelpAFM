@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <or mandatory="true" name="WebHelp">
+            <feature name="Leitor"/>
+            <or abstract="true" name="Formatacao">
+                <and abstract="true" name="Tela">
+                    <feature name="Overlay"/>
+                    <feature name="Regua"/>
+                    <feature name="Background"/>
+                </and>
+                <or abstract="true" name="Tamanho">
+                    <feature name="Pequeno"/>
+                    <feature name="Medio"/>
+                    <feature name="Grande"/>
+                    <feature name="Enorme"/>
+                </or>
+                <feature name="Cor"/>
+                <and abstract="true" name="Texto">
+                    <and name="Fonte">
+                        <feature mandatory="true" name="OpenSans"/>
+                        <feature mandatory="true" name="ComicSans"/>
+                        <feature mandatory="true" name="Georgia"/>
+                        <feature mandatory="true" name="OpenDyslexic"/>
+                    </and>
+                    <feature name="Alinhamento"/>
+                    <feature name="Highlight"/>
+                    <feature name="Linhas"/>
+                    <or abstract="true" name="Estilo">
+                        <feature name="Italico"/>
+                        <feature name="Sublinhado"/>
+                        <feature name="Negrito"/>
+                    </or>
+                    <feature name="Paragrafos"/>
+                    <feature name="Caracteres"/>
+                </and>
+            </or>
+        </or>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <var>Tamanho</var>
+                <disj>
+                    <var>Caracteres</var>
+                    <disj>
+                        <var>Paragrafos</var>
+                        <var>Linhas</var>
+                    </disj>
+                </disj>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <disj>
+                    <var>Linhas</var>
+                    <disj>
+                        <var>Paragrafos</var>
+                        <var>Caracteres</var>
+                    </disj>
+                </disj>
+                <var>Tamanho</var>
+            </imp>
+        </rule>
+        <rule>
+            <imp>
+                <var>Background</var>
+                <var>Cor</var>
+            </imp>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

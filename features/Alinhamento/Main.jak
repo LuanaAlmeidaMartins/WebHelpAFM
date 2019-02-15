@@ -1,0 +1,8 @@
+
+public refines class Main {
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+		SimpleButton a = new SimpleButton ("Alinhamento");
+		a.action () ;
+	}
+}

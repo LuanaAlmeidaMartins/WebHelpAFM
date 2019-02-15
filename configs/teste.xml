@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="WebHelp"/>
+    <feature manual="selected" name="Leitor"/>
+    <feature automatic="selected" manual="selected" name="Formatacao"/>
+    <feature automatic="selected" manual="selected" name="Tela"/>
+    <feature manual="selected" name="Overlay"/>
+    <feature manual="selected" name="Regua"/>
+    <feature manual="selected" name="Background"/>
+    <feature automatic="selected" manual="selected" name="Tamanho"/>
+    <feature manual="selected" name="Pequeno"/>
+    <feature manual="selected" name="Medio"/>
+    <feature manual="selected" name="Grande"/>
+    <feature manual="selected" name="Enorme"/>
+    <feature automatic="selected" name="Cor"/>
+    <feature automatic="selected" name="Texto"/>
+    <feature manual="selected" name="Fonte"/>
+    <feature automatic="selected" name="OpenSans"/>
+    <feature automatic="selected" name="ComicSans"/>
+    <feature automatic="selected" name="Georgia"/>
+    <feature automatic="selected" name="OpenDyslexic"/>
+    <feature manual="selected" name="Alinhamento"/>
+    <feature manual="selected" name="Highlight"/>
+    <feature manual="selected" name="Linhas"/>
+    <feature automatic="selected" manual="selected" name="Estilo"/>
+    <feature manual="selected" name="Italico"/>
+    <feature manual="selected" name="Sublinhado"/>
+    <feature manual="selected" name="Negrito"/>
+    <feature manual="selected" name="Paragrafos"/>
+    <feature manual="selected" name="Caracteres"/>
+</configuration>
