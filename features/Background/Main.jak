@@ -5,6 +5,7 @@ public refines class Main {
 
 	public void createWebHelpBar() {
 		background = new ColorButton("Background");
+		background.actionButton();
 		Super().createWebHelpBar() ;
 	}
 }

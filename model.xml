@@ -5,19 +5,19 @@
         <or mandatory="true" name="WebHelp">
             <feature name="Leitor"/>
             <or abstract="true" name="Formatacao">
-                <and abstract="true" name="Tela">
-                    <feature name="Overlay"/>
-                    <feature name="Regua"/>
-                    <feature name="Background"/>
-                </and>
-                <or abstract="true" name="Tamanho">
+                <or name="Tamanho">
                     <feature name="Pequeno"/>
                     <feature name="Medio"/>
                     <feature name="Grande"/>
                     <feature name="Enorme"/>
                 </or>
                 <feature name="Cor"/>
-                <and abstract="true" name="Texto">
+                <and abstract="true" name="Tela">
+                    <feature name="Overlay"/>
+                    <feature name="Regua"/>
+                    <feature name="Background"/>
+                </and>
+                <and name="Texto">
                     <and name="Fonte">
                         <feature mandatory="true" name="OpenSans"/>
                         <feature mandatory="true" name="ComicSans"/>

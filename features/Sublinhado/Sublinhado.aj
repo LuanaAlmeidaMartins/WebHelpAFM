@@ -3,6 +3,7 @@ public aspect Sublinhado {
 	final String featureName = "Sublinhado";
 	
 	after(): execution(void Main.createWebHelpBar()) {
+		
 	}
 	
 	after(SimpleButton handle): target(handle) && call(private void applyStyle(..)) {

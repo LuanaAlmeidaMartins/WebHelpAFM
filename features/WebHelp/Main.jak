@@ -16,8 +16,6 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
 
 public class Main extends Application {
-	SizeButton linhas = null, caracteres = null, paragrafos = null, fonteSize =null, regua = null, fontFamily = null;
-	ColorButton background = null, fonteColor=null, highlight=null, overlay=null;
 
 	@SuppressWarnings("static-access")
 	@Override
@@ -75,6 +73,7 @@ public class Main extends Application {
 	}
 
 	public void createWebHelpBar() {
+		System.out.println("mains");
 		
 	}
 }

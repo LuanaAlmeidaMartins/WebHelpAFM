@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
 
 import org.w3c.dom.Document;
 
-public class ColorButton implements Types {
+public class ColorButton{
 	private ColorPicker colorPicker;
 	private ColorButtonStatus status;
 

@@ -18,8 +18,6 @@ import javafx.scene.layout.StackPane;
 SoUrCe RooT WebHelp "../features/WebHelp/Main.jak";
 
 abstract class Main$$WebHelp extends Application {
-	SizeButton linhas = null, caracteres = null, paragrafos = null, fonteSize =null, regua = null, fontFamily = null;
-	ColorButton background = null, fonteColor=null, highlight=null, overlay=null;
 
 	@SuppressWarnings("static-access")
 	@Override
@@ -77,55 +75,27 @@ abstract class Main$$WebHelp extends Application {
 	}
 
 	public void createWebHelpBar() {
+		System.out.println("mains");
 		
 	}
 }
 
-SoUrCe  Leitor "../features/Leitor/Main.jak";/**
- * TODO description
- */
-abstract class Main$$Leitor extends  Main$$WebHelp  {
+SoUrCe  Tamanho "../features/Tamanho/Main.jak";
+abstract class Main$$Tamanho extends  Main$$WebHelp  {
+	
+	SizeButton regua = null, paragrafos = null, fonteSize=null;
+	SizeButton  linhas = null, caracteres =null, fontFamily = null;
+	
 	public void createWebHelpBar() {
-		Super().createWebHelpBar();
-		SimpleButton botao = new SimpleButton("Leitor");
-		botao.action();
-	}
-}
-
-SoUrCe  Overlay "../features/Overlay/Main.jak";
-abstract class Main$$Overlay extends  Main$$Leitor  {
-	public void createWebHelpBar() {
-		overlay = new ColorButton("Overlay");
 		Super().createWebHelpBar() ;
 	}
-}
 
-SoUrCe  Regua "../features/Regua/Main.jak";/**
- * TODO description
- */
-abstract class Main$$Regua extends  Main$$Overlay  {
-	public void createWebHelpBar() {
-		System.out.println("regua main");
-		regua = new SizeButton("Regua");
-		Super().createWebHelpBar() ;
-	}
-}
-
-SoUrCe  Background "../features/Background/Main.jak";/**
- * TODO description
- */
-abstract class Main$$Background extends  Main$$Regua  {
-
-	public void createWebHelpBar() {
-		background = new ColorButton("Background");
-		Super().createWebHelpBar() ;
-	}
 }
 
 SoUrCe  Pequeno "../features/Pequeno/Main.jak";/**
  * TODO description
  */
-abstract class Main$$Pequeno extends  Main$$Background  {
+abstract class Main$$Pequeno extends  Main$$Tamanho  {
 	
 	public void createWebHelpBar() {
 		Super().createWebHelpBar() ;
@@ -250,34 +220,56 @@ SoUrCe  Enorme "../features/Enorme/Main.jak";abstract class Main$$Enorme extends
 
 SoUrCe  Cor "../features/Cor/Main.jak";
 abstract class Main$$Cor extends  Main$$Enorme  {
+	
+	ColorButton background = null, fonteColor=null, highlight=null, overlay = null;
+	
 	public void createWebHelpBar() {
 		Super().createWebHelpBar() ;
-		
-		if(background!=null) {
-			background.actionButton();
-		}
-		
-		if(fonteColor!=null) {
-			
-			fonteColor.actionButton();
-		}
-		if(highlight!=null) {
-			highlight.actionButton();
-		}
-		if(overlay!=null) {
-			overlay.actionButton();
-		}
 	}
 
+}
+
+SoUrCe  Overlay "../features/Overlay/Main.jak";
+abstract class Main$$Overlay extends  Main$$Cor  {
+	public void createWebHelpBar() {
+		overlay = new ColorButton("Overlay");
+		overlay.actionButton();
+		Super().createWebHelpBar() ;
+	}
+}
+
+SoUrCe  Regua "../features/Regua/Main.jak";/**
+ * TODO description
+ */
+abstract class Main$$Regua extends  Main$$Overlay  {
+	public void createWebHelpBar() {
+		System.out.println("regua main");
+		regua = new SizeButton("Regua");
+		Super().createWebHelpBar() ;
+	}
+}
+
+SoUrCe  Background "../features/Background/Main.jak";/**
+ * TODO description
+ */
+abstract class Main$$Background extends  Main$$Regua  {
+
+	public void createWebHelpBar() {
+		background = new ColorButton("Background");
+		background.actionButton();
+		Super().createWebHelpBar() ;
+	}
 }
 
 SoUrCe  Fonte "../features/Fonte/Main.jak";/**
  * TODO description
  */
-abstract class Main$$Fonte extends  Main$$Cor  {
+abstract class Main$$Fonte extends  Main$$Background  {
 
 	public void createWebHelpBar() {
 		fonteColor = new ColorButton("Fonte");
+		fonteColor.actionButton();
+		
 		fonteSize = new SizeButton("Tamanho");
 		fontFamily = new SizeButton("Fonte");
 		Super().createWebHelpBar() ;
@@ -341,19 +333,11 @@ abstract class Main$$OpenDyslexic extends  Main$$Georgia  {
 
 }
 
-SoUrCe  Alinhamento "../features/Alinhamento/Main.jak";
-abstract class Main$$Alinhamento extends  Main$$OpenDyslexic  {
-	public void createWebHelpBar() {
-		Super().createWebHelpBar() ;
-		SimpleButton a = new SimpleButton ("Alinhamento");
-		a.action () ;
-	}
-}
-
 SoUrCe  Highlight "../features/Highlight/Main.jak";
-abstract class Main$$Highlight extends  Main$$Alinhamento  {
+abstract class Main$$Highlight extends  Main$$OpenDyslexic  {
 	public void createWebHelpBar() {
 		highlight = new ColorButton("Highlight");
+		highlight.actionButton();
 		Super().createWebHelpBar() ;
 	}
 }

@@ -3,6 +3,8 @@ public aspect Alinhamento {
 	final String featureName = "Alinhamento";
 	
 	after(): execution(void Main.createWebHelpBar()) {
+		SimpleButton a = new SimpleButton (featureName);
+		a.action () ;
 	}
 	
 	after(SimpleButton handle): target(handle) && call(private void applyStyle(..)) {

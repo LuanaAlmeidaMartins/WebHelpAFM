@@ -1,0 +1,11 @@
+
+public refines class Main {
+	
+	SizeButton regua = null, paragrafos = null, fonteSize=null;
+	SizeButton  linhas = null, caracteres =null, fontFamily = null;
+	
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+	}
+
+}

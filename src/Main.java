@@ -18,8 +18,6 @@ import javafx.scene.layout.StackPane;
 
 
 abstract class Main$$WebHelp extends Application {
-	SizeButton linhas = null, caracteres = null, paragrafos = null, fonteSize =null, regua = null, fontFamily = null;
-	ColorButton background = null, fonteColor=null, highlight=null, overlay=null;
 
 	@SuppressWarnings("static-access")
 	@Override
@@ -77,55 +75,27 @@ abstract class Main$$WebHelp extends Application {
 	}
 
 	public void createWebHelpBar() {
+		System.out.println("mains");
 		
 	}
 }
 
-/**
- * TODO description
- */
-abstract class Main$$Leitor extends  Main$$WebHelp  {
-	public void createWebHelpBar() {
-		super.createWebHelpBar();
-		SimpleButton botao = new SimpleButton("Leitor");
-		botao.action();
-	}
-}
 
-
-abstract class Main$$Overlay extends  Main$$Leitor  {
+abstract class Main$$Tamanho extends  Main$$WebHelp  {
+	
+	SizeButton regua = null, paragrafos = null, fonteSize=null;
+	SizeButton  linhas = null, caracteres =null, fontFamily = null;
+	
 	public void createWebHelpBar() {
-		overlay = new ColorButton("Overlay");
 		super.createWebHelpBar() ;
 	}
+
 }
 
 /**
  * TODO description
  */
-abstract class Main$$Regua extends  Main$$Overlay  {
-	public void createWebHelpBar() {
-		System.out.println("regua main");
-		regua = new SizeButton("Regua");
-		super.createWebHelpBar() ;
-	}
-}
-
-/**
- * TODO description
- */
-abstract class Main$$Background extends  Main$$Regua  {
-
-	public void createWebHelpBar() {
-		background = new ColorButton("Background");
-		super.createWebHelpBar() ;
-	}
-}
-
-/**
- * TODO description
- */
-abstract class Main$$Pequeno extends  Main$$Background  {
+abstract class Main$$Pequeno extends  Main$$Tamanho  {
 	
 	public void createWebHelpBar() {
 		super.createWebHelpBar() ;
@@ -250,34 +220,56 @@ abstract class Main$$Enorme extends  Main$$Grande  {
 
 
 abstract class Main$$Cor extends  Main$$Enorme  {
+	
+	ColorButton background = null, fonteColor=null, highlight=null, overlay = null;
+	
 	public void createWebHelpBar() {
 		super.createWebHelpBar() ;
-		
-		if(background!=null) {
-			background.actionButton();
-		}
-		
-		if(fonteColor!=null) {
-			
-			fonteColor.actionButton();
-		}
-		if(highlight!=null) {
-			highlight.actionButton();
-		}
-		if(overlay!=null) {
-			overlay.actionButton();
-		}
 	}
 
+}
+
+
+abstract class Main$$Overlay extends  Main$$Cor  {
+	public void createWebHelpBar() {
+		overlay = new ColorButton("Overlay");
+		overlay.actionButton();
+		super.createWebHelpBar() ;
+	}
 }
 
 /**
  * TODO description
  */
-abstract class Main$$Fonte extends  Main$$Cor  {
+abstract class Main$$Regua extends  Main$$Overlay  {
+	public void createWebHelpBar() {
+		System.out.println("regua main");
+		regua = new SizeButton("Regua");
+		super.createWebHelpBar() ;
+	}
+}
+
+/**
+ * TODO description
+ */
+abstract class Main$$Background extends  Main$$Regua  {
+
+	public void createWebHelpBar() {
+		background = new ColorButton("Background");
+		background.actionButton();
+		super.createWebHelpBar() ;
+	}
+}
+
+/**
+ * TODO description
+ */
+abstract class Main$$Fonte extends  Main$$Background  {
 
 	public void createWebHelpBar() {
 		fonteColor = new ColorButton("Fonte");
+		fonteColor.actionButton();
+		
 		fonteSize = new SizeButton("Tamanho");
 		fontFamily = new SizeButton("Fonte");
 		super.createWebHelpBar() ;
@@ -342,18 +334,10 @@ abstract class Main$$OpenDyslexic extends  Main$$Georgia  {
 }
 
 
-abstract class Main$$Alinhamento extends  Main$$OpenDyslexic  {
-	public void createWebHelpBar() {
-		super.createWebHelpBar() ;
-		SimpleButton a = new SimpleButton ("Alinhamento");
-		a.action () ;
-	}
-}
-
-
-abstract class Main$$Highlight extends  Main$$Alinhamento  {
+abstract class Main$$Highlight extends  Main$$OpenDyslexic  {
 	public void createWebHelpBar() {
 		highlight = new ColorButton("Highlight");
+		highlight.actionButton();
 		super.createWebHelpBar() ;
 	}
 }

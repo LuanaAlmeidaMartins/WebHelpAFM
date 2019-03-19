@@ -5,7 +5,7 @@ import javax.speech.synthesis.SynthesizerModeDesc;
 
 public class Synth {
 
-	public Synth() {
+ Synth() {
 		try {
 			System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us.cmu_us_kal.KevinVoiceDirectory");
 			Central.registerEngineCentral("com.sun.speech.freetts.jsapi.FreeTTSEngineCentral");
