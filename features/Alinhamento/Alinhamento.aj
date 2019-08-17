@@ -1,4 +1,3 @@
-
 public aspect Alinhamento {
 	final String featureName = "Alinhamento";
 	
