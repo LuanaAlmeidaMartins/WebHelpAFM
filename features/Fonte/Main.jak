@@ -1,0 +1,10 @@
+
+public refines class Main {
+	static boolean statusTamanho = false, statusCor = false;
+	static SizeButton fontFamily = null;
+	
+	public void createWebHelpBar() {
+		Super().createWebHelpBar() ;
+	}
+
+}
