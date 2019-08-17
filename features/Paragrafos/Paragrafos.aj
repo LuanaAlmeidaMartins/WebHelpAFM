@@ -1,7 +1,8 @@
 public aspect Paragrafos {
 	final String featureName = "Paragrafos";
 	
-	after(): execution(void Main.createWebHelpBar()) {
+	after(): execution(void Main$$Tamanho.createWebHelpBar()) {
+		Main.paragrafos = new SizeButton(featureName);
 	}
 	
 	after(SizeButton handle): target(handle) && call(private void teste(..)) {
