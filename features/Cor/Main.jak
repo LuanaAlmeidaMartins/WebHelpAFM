@@ -1,7 +1,6 @@
-
 public refines class Main {
 	
-	ColorButton background = null, fonteColor=null, highlight=null, overlay = null;
+	static ColorButton background = null, fonteColor=null, highlight=null, overlay = null;
 	
 	public void createWebHelpBar() {
 		Super().createWebHelpBar() ;
