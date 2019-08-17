@@ -1,13 +1,17 @@
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
+
 public aspect Overlay {
 	final String featureName = "Overlay";
 	
-	after(): execution(void Main.createWebHelpBar()) {
+	after(): execution(void Main$$Cor.createWebHelpBar()) {
+		Main.overlay = new ColorButton(featureName);
+		Main.overlay.actionButton();
 	}
 	
 	after(ColorButton handle): target(handle) && call(private void setFeatureStyle(..)) {
+
 		if (handle.getColorButtonStatus().getButtonID().equals(featureName)) {
 			WebHelpBar.overlay.setVisible(true);
 			GraphicsContext gc = WebHelpBar.overlay.getGraphicsContext2D();
