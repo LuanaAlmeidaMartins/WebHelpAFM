@@ -1,9 +1,11 @@
-
 public aspect Highlight {
 	final String featureName = "Highlight";
-	after(): execution(void Main.createWebHelpBar()) {
+	
+	after(): execution(void Main$$Cor.createWebHelpBar()) {
+		Main.highlight = new ColorButton(featureName);
+		Main.highlight.actionButton();
 	}
-
+	
 	after(ColorButton handle): target(handle) && call(private void setFeatureStyle(..)) {
 
 		if (handle.getColorButtonStatus().getButtonID().equals(featureName)) {
