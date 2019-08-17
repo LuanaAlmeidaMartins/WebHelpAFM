@@ -4,7 +4,8 @@ import javafx.scene.paint.Color;
 public aspect Regua {
 	final String featureName = "Regua";
 	
-	after(): execution(void Main.createWebHelpBar()) {
+	after(): execution(void Main$$Tamanho.createWebHelpBar()){
+		Main.regua= new SizeButton(featureName);
 	}
 	
 	after(SizeButton handle): target(handle) && call(private void teste(..)) {
